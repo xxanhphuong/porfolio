@@ -18,7 +18,14 @@ const Main = (props: IMainProps) => (
     {props.meta}
 
     <div className="intro"></div>
-    <div className={`mx-auto ${!props?.noContainer && "container"}`}>
+    <div className="flex text-center md:hidden h-screen items-center justify-center">
+      Not Support Yet !!!
+    </div>
+    <div
+      className={`mx-auto ${
+        !props?.noContainer && "container"
+      } hidden md:block`}
+    >
       <NavHeader />
       <main className="content text-xl">{props.children}</main>
       <FooterMain />
