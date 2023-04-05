@@ -1,0 +1,23 @@
+.note-page{
+  .ant-btn {
+    border-radius: 0.25rem !important;
+    padding: 0.625rem 2rem !important;
+    height: auto !important;
+  }
+  .icon-status{
+    width: 1.45rem;
+    height: 1.45rem;
+    @media screen and (min-width: 768px) {
+      width: auto;
+      height: auto;
+    }
+  }
+  .icon-trash{
+    width: 1.15rem;
+    height: 1.15rem;
+    @media screen and (min-width: 768px) {
+      width: auto;
+      height: auto;
+    }
+  }
+}

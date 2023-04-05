@@ -1,0 +1,28 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+a {
+  @apply text-blue-700;
+}
+
+a:hover {
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1536px) .container {
+  max-width: 1436px;
+}

@@ -1,0 +1,24 @@
+#categories-page {
+  .ant-list-item-extra {
+    margin-left: 0;
+    margin-right: 2rem;
+  }
+  .ant-list-item {
+    flex-direction: row-reverse;
+    padding-left: 0;
+    padding-right: 0;
+
+    @media screen and (max-width: 1024px) {
+      flex-direction: column-reverse;
+      padding-left: 0;
+      padding-right: 0;
+      .ant-list-item-extra {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
