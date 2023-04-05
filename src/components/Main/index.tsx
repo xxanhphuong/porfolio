@@ -1,7 +1,7 @@
 import { Footer } from "antd/es/layout/layout";
 import type { ReactNode } from "react";
-import NavHeader from "../NavHeader";
 import FooterMain from "../FooterMain";
+import dynamic from "next/dynamic";
 
 // eslint-disable-next-line import/no-named-as-default
 
@@ -12,6 +12,10 @@ type IMainProps = {
   id?: string;
   headerLanding?: boolean;
 };
+
+const NavHeader = dynamic(() => import("../NavHeader"), {
+  ssr: false,
+});
 
 const Main = (props: IMainProps) => (
   <div className="text-black-400" id={props?.id}>
