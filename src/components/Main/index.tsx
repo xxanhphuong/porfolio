@@ -36,5 +36,5 @@ const Main = (props: IMainProps) => (
     </div>
   </div>
 );
-
+// #fff7ea
 export { Main };

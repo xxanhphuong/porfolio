@@ -1,5 +1,5 @@
 /* eslint-disable simple-import-sort/imports */
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { fetchTodoRequest } from "@/store/todo/actions";
@@ -39,6 +39,7 @@ import Logo from "@/public/logo.svg";
 import { TypeAnimation } from "react-type-animation";
 import { useSpring, animated } from "@react-spring/web";
 import { Timeline } from "antd";
+import { Parallax } from "react-scroll-parallax";
 
 const Index = () => {
   const [mount, setMount] = useState(false);
@@ -181,7 +182,7 @@ const Index = () => {
       id="home"
     >
       <div className="hidden md:inline-block">
-        <section className="w-3/5 mx-auto flex justify-center flex-col section-1">
+        <section className="w-3/5 mx-auto flex justify-center flex-col section-1 relative">
           <h4 className=" text-primary mb-[0.4rem]">Hi, my name is</h4>
           <h1 className="text-[3rem] font-bold text-black-400 mb-[0.3rem]">
             Phuong Tran.
@@ -203,6 +204,12 @@ const Index = () => {
           <button className="px-[1.5rem] py-[1rem] border-primary border rounded-4 text-14 text-primary hover:opacity-80 w-fit">
             Check out my resume
           </button>
+          <Parallax translateX={[-20, 10]}>
+            <div className="border-[2rem] border-primary w-[50rem] h-[50rem] rotate-45 absolute right-[90%] bottom-[-37rem] opacity-[0.1]"></div>
+          </Parallax>
+          <Parallax translateX={[40, 10]}>
+            <div className="border-[2rem] border-primary w-[20rem] h-[20rem] rotate-45 absolute left-[90%] bottom-[10rem] opacity-[0.1]"></div>
+          </Parallax>
         </section>
         <section
           className="w-[55%] mx-auto flex pt-[8rem] flex-col section-2 py-[3rem] min-h-[70vh]"
@@ -213,248 +220,266 @@ const Index = () => {
               <h2 className="text-primary title-head">
                 0.1 <span className="text-black-400">About Me</span>
               </h2>
-              <div className="mt-[2rem] text-14 leading-[1.6rem]">
-                <p>
-                  Hello! My name is Brittany and I enjoy creating things that
-                  live on the internet. My interest in web development started
-                  back in 2014 when I decided to try Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Ducimus minus ea illo iure,
-                  animi suscipit voluptates vel aliquam saepe magnam excepturi
-                  nulla, molestiae fuga perspiciatis? Enim fuga obcaecati rerum
-                  nam.
-                </p>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Ipsam, itaque? Suscipit odit cum sapiente culpa ducimus
-                  praesentium adipisci fugit quia dolor iste hic placeat
-                  excepturi, tenetur nesciunt debitis vero quae!
-                </p>
-                <p>
-                  Here are a few technologies I’ve been working with recently:
-                </p>
-                <ul className="grid grid-cols-2">
-                  <li>
-                    <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                    <span className="hover:text-primary">HTML/CSS</span>
-                  </li>
-                  <li>
-                    <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                    <span className="hover:text-primary">
-                      JavaScript (ES6+)
-                    </span>
-                  </li>
-                  <li>
-                    <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                    <span className="hover:text-primary">TypeScript</span>
-                  </li>
-                  <li>
-                    <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                    <span className="hover:text-primary">React</span>
-                  </li>
-                  <li>
-                    <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                    <span className="hover:text-primary">Nextjs</span>
-                  </li>
-                  <li>
-                    <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                    <span className="hover:text-primary">Node.js (NestJS)</span>
-                  </li>
-                  <li>
-                    <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                    <span className="hover:text-primary">Dart (Flutter)</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <div className="avatar-wrapper">
-                <div className="bg-img"></div>
-                <div className="avatar"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section
-          className="w-[45%] mx-auto flex pt-[8rem] flex-col section-2 py-[3rem]"
-          id="section-2"
-        >
-          <div className="gap-[3rem] mb-[3rem]">
-            <h2 className="text-primary title-head">
-              0.2 <span className="text-black-400">My working journey</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-4 gap-[1rem] divide-x-[1px] divide-[#233554]">
-            <div className="custom-timeline">
-              <Timeline
-                // mode="alternate"
-                items={[
-                  {
-                    dot: (
-                      <i className="fas fa-graduation-cap text-16 text-black-500"></i>
-                    ),
-                    children: (
-                      <span
-                        className="effect-hover-link hover:opacity-80"
-                        onClick={() => onChangeContentSection2(1)}
-                      >
-                        <p
-                          style={{
-                            color:
-                              contentTabSection2 == 1 ? "#64ffda" : "#CCD6F6",
-                          }}
-                        >
-                          Learning
-                        </p>
+              <Parallax translateX={[-5, 5]} opacity={[0.5, 1]}>
+                <div className="mt-[2rem] text-14 leading-[1.6rem]">
+                  <p>
+                    Hello! My name is Brittany and I enjoy creating things that
+                    live on the internet. My interest in web development started
+                    back in 2014 when I decided to try Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Ducimus minus ea illo
+                    iure, animi suscipit voluptates vel aliquam saepe magnam
+                    excepturi nulla, molestiae fuga perspiciatis? Enim fuga
+                    obcaecati rerum nam.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Ipsam, itaque? Suscipit odit cum sapiente culpa ducimus
+                    praesentium adipisci fugit quia dolor iste hic placeat
+                    excepturi, tenetur nesciunt debitis vero quae!
+                  </p>
+                  <p>
+                    Here are a few technologies I’ve been working with recently:
+                  </p>
+                  <ul className="grid grid-cols-2">
+                    <li>
+                      <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
+                      <span className="hover:text-primary">HTML/CSS</span>
+                    </li>
+                    <li>
+                      <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
+                      <span className="hover:text-primary">
+                        JavaScript (ES6+)
                       </span>
-                    ),
-                  },
-                  {
-                    children: (
-                      <span
-                        className="effect-hover-link hover:opacity-80"
-                        onClick={() => onChangeContentSection2(2)}
-                      >
-                        <p
-                          style={{
-                            color:
-                              contentTabSection2 == 2 ? "#64ffda" : "#CCD6F6",
-                          }}
-                        >
-                          Top on seek
-                        </p>
+                    </li>
+                    <li>
+                      <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
+                      <span className="hover:text-primary">TypeScript</span>
+                    </li>
+                    <li>
+                      <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
+                      <span className="hover:text-primary">React</span>
+                    </li>
+                    <li>
+                      <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
+                      <span className="hover:text-primary">Nextjs</span>
+                    </li>
+                    <li>
+                      <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
+                      <span className="hover:text-primary">
+                        Node.js (NestJS)
                       </span>
-                    ),
-                  },
-                  {
-                    children: (
-                      <span
-                        className="effect-hover-link hover:opacity-80"
-                        onClick={() => onChangeContentSection2(3)}
-                      >
-                        <p
-                          style={{
-                            color:
-                              contentTabSection2 == 3 ? "#64ffda" : "#CCD6F6",
-                          }}
-                        >
-                          Learning
-                        </p>
-                      </span>
-                    ),
-                    color: "green",
-                  },
-                  {
-                    // dot: <ClockCircleOutlined style={{ fontSize: "16px" }} />,
-                    children: (
-                      <span
-                        className="effect-hover-link hover:opacity-80"
-                        onClick={() => onChangeContentSection2(4)}
-                      >
-                        <p style={{ color: "#CCD6F6" }}>Aegona</p>
-                      </span>
-                    ),
-                  },
-                ]}
-              />
-            </div>
-            <div className="col-span-3 -mt-[8px] pl-[1.7rem]">
-              {renderContentSection2()}
-            </div>
-          </div>
-        </section>
-        <section
-          className="w-[60%] mx-auto flex flex-col section-2 py-[8rem] pt-[12rem]"
-          id="section-3"
-        >
-          <div className="gap-[3rem] mb-[3rem]">
-            <h2 className="text-primary title-head">
-              0.3 <span className="text-black-400">Some Things I’ve Built</span>
-            </h2>
-          </div>
-          <div className="flex gap-[2rem] grow w-full relative mb-[6rem]">
-            <div className="flex items-center wrapper-project-block">
-              <div className="wrapper-project-img">
-                <Image src={Project1Img} alt="Project1Img"></Image>
-              </div>
-            </div>
-            <div className="text-right w-[40%]">
-              <h3 className="text-primary text-14">Featured Project</h3>
-              <h2 className="text-black-400 text-18 mb-[1.5rem]">Project 1</h2>
-              <div className="description-section-3 text-black-500 text-14  relative right-0 mt-[1.2rem]">
-                <div className="text-black-500 px-[2rem] py-[1rem] w-[100%]">
-                  A minimal, dark blue theme for VS Code, Sublime Text, Atom,
-                  iTerm, and more. Available on Visual Studio Marketplace,
-                  Package Control, Atom Package Manager, and npm.
+                    </li>
+                    <li>
+                      <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
+                      <span className="hover:text-primary">Dart (Flutter)</span>
+                    </li>
+                  </ul>
                 </div>
-                <ul className="flex gap-[1rem] justify-end mt-[1rem]">
-                  <li className="text-black-500 text-14 hover:text-primary">
-                    VS Code
-                  </li>
-                  <li className="text-black-500 text-14 hover:text-primary">
-                    NextJS
-                  </li>
-                  <li className="text-black-500 text-14 hover:text-primary">
-                    NestJS
-                  </li>
-                </ul>
-              </div>
+              </Parallax>
             </div>
-          </div>
-          <div className="flex gap-[2rem] grow w-full relative">
-            <div className="text-left w-[40%]">
-              <h3 className="text-primary text-14">Featured Project</h3>
-              <h2 className="text-black-400 text-18 mb-[1.5rem]">Project 2</h2>
-              <div className="description-section-3 text-black-500 text-14  relative left-0 mt-[1.2rem]">
-                <div className="text-black-500 px-[2rem] py-[1rem] w-[100%]">
-                  A minimal, dark blue theme for VS Code, Sublime Text, Atom,
-                  iTerm, and more. Available on Visual Studio Marketplace,
-                  Package Control, Atom Package Manager, and npm.
+            <Parallax translateX={[10, 0]} opacity={[0.5, 1]}>
+              <div>
+                <div className="avatar-wrapper">
+                  <div className="bg-img"></div>
+                  <div className="avatar"></div>
                 </div>
-                <ul className="flex gap-[1rem] justify-start mt-[1rem]">
-                  <li className="text-black-500 text-14 hover:text-primary">
-                    VS Code
-                  </li>
-                  <li className="text-black-500 text-14 hover:text-primary">
-                    NextJS
-                  </li>
-                  <li className="text-black-500 text-14 hover:text-primary">
-                    NestJS
-                  </li>
-                </ul>
               </div>
-            </div>
-            <div className="flex items-center wrapper-project-block justify-end">
-              <div className="wrapper-project-img">
-                <Image
-                  src={Project1Img}
-                  alt="Pizza4psImage"
-                  className="ml-auto"
-                ></Image>
-              </div>
-            </div>
+            </Parallax>
           </div>
         </section>
-        <section
-          className="w-[35%] mx-auto flex flex-col section-2 pb-[12rem] pt-[6rem]"
-          id="section-4"
-        >
-          <div className="gap-[3rem] mb-[3rem]">
-            <h2 className="text-primary text-center">
-              0.4 <span className="text-black-400">What’s Next?</span>
-            </h2>
-            <h1 className="text-center text-[2.5rem] font-bold my-[1.7rem] mb-[1.5rem]">
-              Get In Touch
-            </h1>
-            <p className="text-16 text-black-500 text-center leading-[1.6rem] mb-[3.5rem]">
-              Although I’m not currently looking for any new opportunities, my
-              inbox is always open. Whether you have a question or just want to
-              say hi, I’ll try my best to get back to you!
-            </p>
-            <button className="mt-[2rem] px-[1.5rem] py-[1rem] border-primary border rounded-4 text-14 text-primary hover:opacity-80 w-fit mx-auto block">
-              Say Hello
-            </button>
-          </div>
-        </section>
+        <Parallax translateY={[15, 0]}>
+          <section
+            className="w-[45%] mx-auto flex pt-[8rem] flex-col section-2 py-[3rem]"
+            id="section-2"
+          >
+            <div className="gap-[3rem] mb-[3rem]">
+              <h2 className="text-primary title-head">
+                0.2 <span className="text-black-400">My working journey</span>
+              </h2>
+            </div>
+            <div className="grid grid-cols-4 gap-[1rem] divide-x-[1px] divide-[#233554]">
+              <div className="custom-timeline">
+                <Timeline
+                  // mode="alternate"
+                  items={[
+                    {
+                      dot: (
+                        <i className="fas fa-graduation-cap text-16 text-black-500"></i>
+                      ),
+                      children: (
+                        <span
+                          className="effect-hover-link hover:opacity-80"
+                          onClick={() => onChangeContentSection2(1)}
+                        >
+                          <p
+                            style={{
+                              color:
+                                contentTabSection2 == 1 ? "#64ffda" : "#CCD6F6",
+                            }}
+                          >
+                            Learning
+                          </p>
+                        </span>
+                      ),
+                    },
+                    {
+                      children: (
+                        <span
+                          className="effect-hover-link hover:opacity-80"
+                          onClick={() => onChangeContentSection2(2)}
+                        >
+                          <p
+                            style={{
+                              color:
+                                contentTabSection2 == 2 ? "#64ffda" : "#CCD6F6",
+                            }}
+                          >
+                            Top on seek
+                          </p>
+                        </span>
+                      ),
+                    },
+                    {
+                      children: (
+                        <span
+                          className="effect-hover-link hover:opacity-80"
+                          onClick={() => onChangeContentSection2(3)}
+                        >
+                          <p
+                            style={{
+                              color:
+                                contentTabSection2 == 3 ? "#64ffda" : "#CCD6F6",
+                            }}
+                          >
+                            Learning
+                          </p>
+                        </span>
+                      ),
+                      color: "green",
+                    },
+                    {
+                      // dot: <ClockCircleOutlined style={{ fontSize: "16px" }} />,
+                      children: (
+                        <span
+                          className="effect-hover-link hover:opacity-80"
+                          onClick={() => onChangeContentSection2(4)}
+                        >
+                          <p style={{ color: "#CCD6F6" }}>Aegona</p>
+                        </span>
+                      ),
+                    },
+                  ]}
+                />
+              </div>
+
+              <div className="col-span-3 -mt-[8px] pl-[1.7rem]">
+                {renderContentSection2()}
+              </div>
+            </div>
+          </section>
+        </Parallax>
+        <Parallax translateY={[0, 20]}>
+          <section
+            className="w-[60%] mx-auto flex flex-col section-2 py-[8rem] pt-[12rem]"
+            id="section-3"
+          >
+            <div className="gap-[3rem] mb-[3rem]">
+              <h2 className="text-primary title-head">
+                0.3{" "}
+                <span className="text-black-400">Some Things I’ve Built</span>
+              </h2>
+            </div>
+            <div className="flex gap-[2rem] grow w-full relative mb-[6rem]">
+              <div className="flex items-center wrapper-project-block">
+                <div className="wrapper-project-img">
+                  <Image src={Project1Img} alt="Project1Img"></Image>
+                </div>
+              </div>
+              <div className="text-right w-[40%]">
+                <h3 className="text-primary text-14">Featured Project</h3>
+                <h2 className="text-black-400 text-18 mb-[1.5rem]">
+                  Project 1
+                </h2>
+                <div className="description-section-3 text-black-500 text-14  relative right-0 mt-[1.2rem]">
+                  <div className="text-black-500 px-[2rem] py-[1rem] w-[100%]">
+                    A minimal, dark blue theme for VS Code, Sublime Text, Atom,
+                    iTerm, and more. Available on Visual Studio Marketplace,
+                    Package Control, Atom Package Manager, and npm.
+                  </div>
+                  <ul className="flex gap-[1rem] justify-end mt-[1rem]">
+                    <li className="text-black-500 text-14 hover:text-primary">
+                      VS Code
+                    </li>
+                    <li className="text-black-500 text-14 hover:text-primary">
+                      NextJS
+                    </li>
+                    <li className="text-black-500 text-14 hover:text-primary">
+                      NestJS
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-[2rem] grow w-full relative">
+              <div className="text-left w-[40%]">
+                <h3 className="text-primary text-14">Featured Project</h3>
+                <h2 className="text-black-400 text-18 mb-[1.5rem]">
+                  Project 2
+                </h2>
+                <div className="description-section-3 text-black-500 text-14  relative left-0 mt-[1.2rem]">
+                  <div className="text-black-500 px-[2rem] py-[1rem] w-[100%]">
+                    A minimal, dark blue theme for VS Code, Sublime Text, Atom,
+                    iTerm, and more. Available on Visual Studio Marketplace,
+                    Package Control, Atom Package Manager, and npm.
+                  </div>
+                  <ul className="flex gap-[1rem] justify-start mt-[1rem]">
+                    <li className="text-black-500 text-14 hover:text-primary">
+                      VS Code
+                    </li>
+                    <li className="text-black-500 text-14 hover:text-primary">
+                      NextJS
+                    </li>
+                    <li className="text-black-500 text-14 hover:text-primary">
+                      NestJS
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex items-center wrapper-project-block justify-end">
+                <div className="wrapper-project-img">
+                  <Image
+                    src={Project1Img}
+                    alt="Pizza4psImage"
+                    className="ml-auto"
+                  ></Image>
+                </div>
+              </div>
+            </div>
+          </section>
+        </Parallax>
+        <Parallax translateY={[0, 50]}>
+          <section
+            className="w-[35%] mx-auto flex flex-col section-2 pb-[12rem] pt-[6rem]"
+            id="section-4"
+          >
+            <div className="gap-[3rem] mb-[3rem]">
+              <h2 className="text-primary text-center">
+                0.4 <span className="text-black-400">What’s Next?</span>
+              </h2>
+              <h1 className="text-center text-[2.5rem] font-bold my-[1.7rem] mb-[1.5rem]">
+                Get In Touch
+              </h1>
+              <p className="text-16 text-black-500 text-center leading-[1.6rem] mb-[3.5rem]">
+                Although I’m not currently looking for any new opportunities, my
+                inbox is always open. Whether you have a question or just want
+                to say hi, I’ll try my best to get back to you!
+              </p>
+              <button className="mt-[2rem] px-[1.5rem] py-[1rem] border-primary border rounded-4 text-14 text-primary hover:opacity-80 w-fit mx-auto block">
+                Say Hello
+              </button>
+            </div>
+          </section>
+        </Parallax>
       </div>
       <div className="flex text-center md:hidden h-screen items-center justify-center">
         Not Support Yet !!!
