@@ -22,19 +22,14 @@ const Main = (props: IMainProps) => (
     {props.meta}
 
     <div className="intro"></div>
-    <div className="flex text-center md:hidden h-screen items-center justify-center">
-      Not Support Yet !!!
-    </div>
-    <div
-      className={`mx-auto ${
-        !props?.noContainer && "container"
-      } hidden md:block`}
-    >
+    <div className={`mx-auto ${!props?.noContainer && "container"} `}>
       <NavHeader />
-      <main className="content text-xl">{props.children}</main>
+      <main className="content text-xl overflow-hidden mx-auto flex justify-center flex-col section-1 relative">
+        {props.children}
+      </main>
       <FooterMain />
     </div>
   </div>
 );
-// #fff7ea
+
 export { Main };

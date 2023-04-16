@@ -40,6 +40,7 @@ import { TypeAnimation } from "react-type-animation";
 import { useSpring, animated } from "@react-spring/web";
 import { Timeline } from "antd";
 import { Parallax } from "react-scroll-parallax";
+import KnightTour from "@/components/KnightTour";
 
 const Index = () => {
   const [mount, setMount] = useState(false);
@@ -181,16 +182,16 @@ const Index = () => {
       headerLanding
       id="home"
     >
-      <div className="hidden md:inline-block">
-        <section className="w-3/5 mx-auto flex justify-center flex-col section-1 relative">
+      <div className="">
+        <section className="w-10/12 xl:w-3/5 mx-auto flex justify-center flex-col section-1 relative">
           <h4 className=" text-primary mb-[0.4rem]">Hi, my name is</h4>
-          <h1 className="text-[3rem] font-bold text-black-400 mb-[0.3rem]">
+          <h1 className="text-[2rem] md:text-[3rem] font-bold text-black-400 mb-[0.3rem]">
             Phuong Tran.
           </h1>
-          <h4 className="text-[3rem] font-bold text-black-500 mb-[0.4rem]">
+          <h4 className="text-[2rem] md:text-[3rem] font-bold text-black-500 mb-[0.4rem]">
             I build things for the web.
           </h4>
-          <p className="text-14 text-black-500 leading-[1.6rem] w-2/4 mb-[1.4rem]">
+          <p className="text-14 text-black-500 leading-[1.6rem] w-full md:w-2/4 mb-[1.4rem]">
             I’m a software engineer specializing in building (and occasionally
             designing) exceptional digital experiences. Currently, I’m focused
             on building accessible, human-centered products at{" "}
@@ -212,11 +213,11 @@ const Index = () => {
           </Parallax>
         </section>
         <section
-          className="w-[55%] mx-auto flex pt-[8rem] flex-col section-2 py-[3rem] min-h-[70vh]"
+          className="w-[80%] md:w-[55%] mx-auto flex pt-[8rem] flex-col section-2 py-[3rem] min-h-[70vh]"
           id="section-1"
         >
-          <div className="grid grid-cols-3 gap-[3rem]">
-            <div className="col-span-2 mr-[3rem]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-[3rem]">
+            <div className="col-span-2 mr-0 md:mr-[3rem] order-2 md:order-1">
               <h2 className="text-primary title-head">
                 0.1 <span className="text-black-400">About Me</span>
               </h2>
@@ -277,19 +278,19 @@ const Index = () => {
                 </div>
               </Parallax>
             </div>
-            <Parallax translateX={[10, 0]} opacity={[0.5, 1]}>
-              <div>
+            <div className="order-1 md:order-2 mb-[7rem] md:mb-0">
+              <Parallax translateX={[10, 0]} opacity={[0.5, 1]}>
                 <div className="avatar-wrapper">
                   <div className="bg-img"></div>
                   <div className="avatar"></div>
                 </div>
-              </div>
-            </Parallax>
+              </Parallax>
+            </div>
           </div>
         </section>
         <Parallax translateY={[15, 0]}>
           <section
-            className="w-[45%] mx-auto flex pt-[8rem] flex-col section-2 py-[3rem]"
+            className="w-[80%] md:w-[45%] mx-auto flex pt-[8rem] flex-col section-2 py-[3rem]"
             id="section-2"
           >
             <div className="gap-[3rem] mb-[3rem]">
@@ -297,7 +298,7 @@ const Index = () => {
                 0.2 <span className="text-black-400">My working journey</span>
               </h2>
             </div>
-            <div className="grid grid-cols-4 gap-[1rem] divide-x-[1px] divide-[#233554]">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-[1rem] divide-x-[1px] divide-[#233554]">
               <div className="custom-timeline">
                 <Timeline
                   // mode="alternate"
@@ -380,7 +381,7 @@ const Index = () => {
         </Parallax>
         <Parallax translateY={[0, 20]}>
           <section
-            className="w-[60%] mx-auto flex flex-col section-2 py-[8rem] pt-[12rem]"
+            className="w-[80%] md:w-[60%] mx-auto flex flex-col section-2 py-[8rem] pt-[12rem]"
             id="section-3"
           >
             <div className="gap-[3rem] mb-[3rem]">
@@ -389,13 +390,13 @@ const Index = () => {
                 <span className="text-black-400">Some Things I’ve Built</span>
               </h2>
             </div>
-            <div className="flex gap-[2rem] grow w-full relative mb-[6rem]">
+            <div className="flex gap-[2rem] grow w-full relative mb-[6rem] flex-col md:flex-row">
               <div className="flex items-center wrapper-project-block">
                 <div className="wrapper-project-img">
                   <Image src={Project1Img} alt="Project1Img"></Image>
                 </div>
               </div>
-              <div className="text-right w-[40%]">
+              <div className="text-right w-full md:w-[40%]">
                 <h3 className="text-primary text-14">Featured Project</h3>
                 <h2 className="text-black-400 text-18 mb-[1.5rem]">
                   Project 1
@@ -420,8 +421,8 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="flex gap-[2rem] grow w-full relative">
-              <div className="text-left w-[40%]">
+            <div className="flex gap-[2rem] grow w-full relative flex-col-reverse md:flex-row ">
+              <div className="text-left w-full md:w-[40%]">
                 <h3 className="text-primary text-14">Featured Project</h3>
                 <h2 className="text-black-400 text-18 mb-[1.5rem]">
                   Project 2
@@ -459,7 +460,7 @@ const Index = () => {
         </Parallax>
         <Parallax translateY={[0, 50]}>
           <section
-            className="w-[35%] mx-auto flex flex-col section-2 pb-[12rem] pt-[6rem]"
+            className="w-[80%] md:w-[35%] mx-auto flex flex-col section-2 pb-[12rem] pt-[6rem]"
             id="section-4"
           >
             <div className="gap-[3rem] mb-[3rem]">
@@ -481,9 +482,13 @@ const Index = () => {
           </section>
         </Parallax>
       </div>
-      <div className="flex text-center md:hidden h-screen items-center justify-center">
-        Not Support Yet !!!
-      </div>
+
+      <section
+        className="w-[80%] md:w-[60%] mx-auto flex flex-col justify-center section-2 py-[8rem] pt-[12rem]"
+        id="section-3"
+      >
+        <KnightTour />
+      </section>
       <p className="text-14 text-black-500 text-14 hover:text-primary text-center py-[2rem]">
         Designed & Built by Phuong tran
       </p>

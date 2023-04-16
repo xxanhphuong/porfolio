@@ -124,3 +124,34 @@ body {
     }
   }
 }
+
+.chess-wrapper {
+  display: flex;
+  width: fit-content;
+  gap: 8px;
+  .chess-item {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #64ffda;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.1s;
+    font-size: 0.8rem;
+    &.active,
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+  }
+  .chess-w {
+    cursor: not-allowed;
+    border: 1px solid #64ffda;
+    background: #143041;
+  }
+  .active {
+  }
+}

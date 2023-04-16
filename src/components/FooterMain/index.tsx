@@ -9,7 +9,7 @@ const FooterMain = () => (
     className="flex items-center justify-between px-[3.8rem] py-[1.5rem] fixed bottom-0 left-0 right-0"
     id="nav-header"
   >
-    <div className="flex flex-col justify-center items-center absolute bottom-0 left-[3.8rem]">
+    <div className="hidden md:flex flex-col justify-center items-center absolute bottom-0 left-[0.5rem] xl:left-[3.8rem]">
       <ul className="flex flex-col items-center">
         <li>
           <Link href="">
@@ -34,7 +34,7 @@ const FooterMain = () => (
       </ul>
       <div className="h-[10rem] w-[1px] bg-black-500"></div>
     </div>
-    <div className="flex flex-col justify-center items-center absolute bottom-0 right-[3.8rem]">
+    <div className="hidden md:flex flex-col justify-center items-center absolute bottom-0 right-[1rem] xl:right-[3.8rem]">
       <ul className="flex flex-col items-center">
         <li>
           <Link

@@ -225,6 +225,10 @@
     z-index: 2;
     animation: gradient 15s ease infinite;
     filter: grayscale(100%);
+    @media screen and (max-width: 600px) {
+      width: 70%;
+      padding-bottom: 70%;
+    }
   }
   .bg-img {
     position: absolute;
@@ -237,6 +241,10 @@
     transform: translate(32px, 32px);
     border-radius: 6px;
     transition: 0.5s;
+    @media screen and (max-width: 600px) {
+      width: 70%;
+      padding-bottom: 70%;
+    }
   }
   &:hover {
     .bg-img {
@@ -275,6 +283,10 @@
   width: 60%;
   min-width: 60%;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    min-width: 100%;
+  }
   .wrapper-project-img {
     position: relative;
     border-radius: 8px;
@@ -286,6 +298,9 @@
       filter: opacity(0.5);
       height: 20rem;
       object-fit: cover;
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
     }
   }
   &:hover {

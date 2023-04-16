@@ -53,7 +53,10 @@ const NavHeader = () => {
     >
       <div className="flex items-center justify-between px-[3rem] py-[1rem]">
         <Logo className="h-[3rem] w-auto logo" />
-        <ul className="h-full flex items-center gap-[1.5rem] mb-0 nav">
+        <button className="block md:hidden">
+          <i className="fas fa-bars text-[2rem] text-primary"></i>
+        </button>
+        <ul className="h-full items-center gap-[1.5rem] mb-0 nav hidden md:flex">
           <li className="inline-block hover:text-primary hover:relative hover:-translate-y-[4px] transition-all p-[1rem]">
             <span
               className="text-14 hover:text-primary"
