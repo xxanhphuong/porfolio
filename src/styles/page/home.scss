@@ -140,9 +140,12 @@
   left: 0;
   right: 0;
   box-shadow: unset;
+  > div {
+    transition: 0.7s;
+  }
   &.sticky-header {
     > div {
-      padding: 0rem 3rem;
+      padding: 0rem 2rem;
     }
     margin-top: 0;
     box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
@@ -151,6 +154,27 @@
   &.unset-sticky-header {
     margin-top: -100%;
     box-shadow: unset;
+  }
+  .fixed-nav-mobile {
+    @media screen and (max-width: 600px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      bottom: 0;
+      height: 100vh;
+      box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+      backdrop-filter: blur(10px) !important;
+
+      width: 100vw;
+      transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+      &.active {
+        right: 0%;
+      }
+    }
   }
 }
 

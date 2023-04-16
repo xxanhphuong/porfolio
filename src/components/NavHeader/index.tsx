@@ -10,6 +10,7 @@ import { Button } from "antd";
 const NavHeader = () => {
   const [y, setY] = useState(window.scrollY);
   const [isSticky, setIsSticky] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const handleNavigation = useCallback(
     (e: any) => {
@@ -33,30 +34,45 @@ const NavHeader = () => {
     };
   }, [handleNavigation]);
 
+  const toggleNavMobile = () => {
+    setIsActive(!isActive);
+  };
+
   const scroll = (section: any) => {
     window.scrollTo({
       top: section.offsetTop,
       left: 0,
       behavior: "smooth",
     });
+    setIsActive(false);
   };
   return (
     <div
       className={`nav-header ${
         isSticky && y != 0
-          ? "sticky-header"
+          ? "sticky-header py-[0.5rem] md:py-0"
           : y != 0
           ? "unset-sticky-header"
           : ""
       }`}
       id="nav-header"
     >
-      <div className="flex items-center justify-between px-[3rem] py-[1rem]">
+      <div className="flex items-center justify-between px-[2rem] md:px-[3rem] py-[1rem]">
         <Logo className="h-[3rem] w-auto logo" />
-        <button className="block md:hidden">
-          <i className="fas fa-bars text-[2rem] text-primary"></i>
+        <button className="block md:hidden" onClick={toggleNavMobile}>
+          <i className="fas fa-bars text-[1.5rem] text-primary"></i>
         </button>
-        <ul className="h-full items-center gap-[1.5rem] mb-0 nav hidden md:flex">
+        <ul
+          className={`h-full items-center gap-[1.5rem] mb-0 nav md:flex fixed-nav-mobile pt-[3rem] md:pt-0 ${
+            isActive && "active"
+          }`}
+        >
+          <button
+            className="block md:hidden absolute right-[1rem] top-[1rem]"
+            onClick={toggleNavMobile}
+          >
+            <i class="far fa-times-circle text-primary text-[1.5rem]"></i>
+          </button>
           <li className="inline-block hover:text-primary hover:relative hover:-translate-y-[4px] transition-all p-[1rem]">
             <span
               className="text-14 hover:text-primary"
