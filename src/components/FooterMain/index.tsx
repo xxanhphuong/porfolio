@@ -12,23 +12,18 @@ const FooterMain = () => (
     <div className="hidden md:flex flex-col justify-center items-center absolute bottom-0 left-[0.5rem] xl:left-[3.8rem]">
       <ul className="flex flex-col items-center">
         <li>
-          <Link href="">
+          <Link href="https://t.me/PhuongTranAnh">
             <i className="fab fa-telegram-plane text-[1.2rem] text-black-500 hover:text-primary hover:relative hover:-translate-y-[3px] transition-all p-[0.8rem]" />
           </Link>
         </li>
         <li>
-          <Link href="">
+          <Link href="https://www.linkedin.com/in/anh-ph%C6%B0%C6%A1ng-tran-28b02b159/">
             <i className="fab fa-linkedin-in text-[1.2rem] text-black-500 hover:text-primary hover:relative hover:-translate-y-[3px] transition-all p-[0.8rem]" />
           </Link>
         </li>
         <li>
-          <Link href="">
+          <Link href="https://www.instagram.com/anhptran__/">
             <i className="fab fa-instagram text-[1.2rem] text-black-500 hover:text-primary hover:relative hover:-translate-y-[3px] transition-all p-[0.8rem]" />
-          </Link>
-        </li>
-        <li>
-          <Link href="">
-            <i className="fab fa-facebook-f text-[1.2rem] text-black-500 hover:text-primary hover:relative hover:-translate-y-[3px] transition-all p-[0.8rem]" />
           </Link>
         </li>
       </ul>
@@ -38,14 +33,15 @@ const FooterMain = () => (
       <ul className="flex flex-col items-center">
         <li>
           <Link
-            href=""
+               href="mailto:aptran1101@gmail.com"
             className="hover:text-primary hover:text-primary hover:relative hover:-translate-y-[3px] transition-all"
           >
             <span
               className=" text-black-500 text-14 hover:text-primary hover:relative hover:-translate-y-[3px] transition-all leading-[1rem]"
               style={{ writingMode: "vertical-rl", letterSpacing: "4px" }}
+              
             >
-              aptran17@gmail.com
+              aptran1101@gmail.com
             </span>
           </Link>
         </li>

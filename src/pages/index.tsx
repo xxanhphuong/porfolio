@@ -202,9 +202,9 @@ const Index = () => {
             </span>
             .
           </p>
-          <button className="px-[1.5rem] py-[1rem] border-primary border rounded-4 text-14 text-primary hover:opacity-80 w-fit">
+          <Link className="px-[1.5rem] py-[1rem] border-primary border rounded-4 text-14 text-primary hover:opacity-80 w-fit mt-[1.5rem]" href="https://www.linkedin.com/in/anh-ph%C6%B0%C6%A1ng-tran-28b02b159/">
             Check out my resume
-          </button>
+          </Link>
           <Parallax translateX={[-20, 10]}>
             <div className="border-[2rem] border-primary w-[50rem] h-[50rem] rotate-45 absolute right-[90%] bottom-[-37rem] opacity-[0.1]"></div>
           </Parallax>
@@ -224,20 +224,19 @@ const Index = () => {
               <Parallax translateX={[-5, 5]} opacity={[0.5, 1]}>
                 <div className="mt-[2rem] text-14 leading-[1.6rem]">
                   <p>
-                    Hello! My name is Brittany and I enjoy creating things that
+                    Hello! My name is Phuong Tran and I enjoy creating things that
                     live on the internet. My interest in web development started
-                    back in 2014 when I decided to try Lorem ipsum dolor sit
-                    amet consectetur adipisicing elit. Ducimus minus ea illo
-                    iure, animi suscipit voluptates vel aliquam saepe magnam
-                    excepturi nulla, molestiae fuga perspiciatis? Enim fuga
-                    obcaecati rerum nam.
+                    back in 2014.
+                    I have the experience of working on front-end development.
+                    However, i would like to be not only in Front-end but also in Full stack Development
+                    In addition, i am active and enthusiastic. 
+                    I am willing to learn and do what takes to get a job done well even under pressure.
                   </p>
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Ipsam, itaque? Suscipit odit cum sapiente culpa ducimus
-                    praesentium adipisci fugit quia dolor iste hic placeat
-                    excepturi, tenetur nesciunt debitis vero quae!
+                    To me a chance to discover valuable knowledge in the real world and hope to have more work experience in the field of love and will create useful contacts.
+                    I really look forward to learning more about more thing and can assure you that my drive, commitment and enthusiasm will be a great value to your team.
                   </p>
+                  
                   <p>
                     Here are a few technologies I’ve been working with recently:
                   </p>
@@ -335,7 +334,7 @@ const Index = () => {
                                 contentTabSection2 == 2 ? "#64ffda" : "#CCD6F6",
                             }}
                           >
-                            Top on seek
+                            Top On Seek (TOS) LTD.
                           </p>
                         </span>
                       ),
@@ -352,7 +351,7 @@ const Index = () => {
                                 contentTabSection2 == 3 ? "#64ffda" : "#CCD6F6",
                             }}
                           >
-                            Learning
+                            Kmin Academy
                           </p>
                         </span>
                       ),
@@ -365,7 +364,7 @@ const Index = () => {
                           className="effect-hover-link hover:opacity-80"
                           onClick={() => onChangeContentSection2(4)}
                         >
-                          <p style={{ color: "#CCD6F6" }}>Aegona</p>
+                          <p style={{ color: "#CCD6F6" }}>Aegona Co., Ltd</p>
                         </span>
                       ),
                     },
@@ -471,7 +470,7 @@ const Index = () => {
                 Get In Touch
               </h1>
               <p className="text-16 text-black-500 text-center leading-[1.6rem] mb-[3.5rem]">
-                Although I’m not currently looking for any new opportunities, my
+                Although I’m currently looking for any new opportunities, my
                 inbox is always open. Whether you have a question or just want
                 to say hi, I’ll try my best to get back to you!
               </p>
