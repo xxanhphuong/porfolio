@@ -77,29 +77,7 @@ const Index = () => {
             <ul className="grid gap-[1.8rem]">
               <li>
                 <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                <span className="text-14 text-black-500">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Deleniti at neque fugit ratione voluptates pariatur, autem
-                  eligendi itaque assumenda quod dolores, unde officiis dolorem
-                  perferendis iure atque. Ut, vitae maxime?
-                </span>
-              </li>
-              <li>
-                <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                <span className="text-14 text-black-500">
-                  Voluptates pariatur, autem eligendi itaque assumenda quod
-                  dolores, unde officiis dolorem perferendis iure atque. Ut,
-                  vitae maxime?
-                </span>
-              </li>
-              <li>
-                <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                <span className="text-14 text-black-500">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Possimus id, quo sunt sed neque aliquid voluptate obcaecati?
-                  Iste iusto excepturi dolorum. Nulla neque nobis ab, iure
-                  libero harum rem consectetur.
-                </span>
+                <span className="text-14 text-black-500">Comming soon !!!</span>
               </li>
             </ul>
           </div>
@@ -117,20 +95,7 @@ const Index = () => {
             <ul className="grid gap-[1.8rem]">
               <li>
                 <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                <span className="text-14 text-black-500">
-                  Voluptates pariatur, autem eligendi itaque assumenda quod
-                  dolores, unde officiis dolorem perferendis iure atque. Ut,
-                  vitae maxime?
-                </span>
-              </li>
-              <li>
-                <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                <span className="text-14 text-black-500">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Possimus id, quo sunt sed neque aliquid voluptate obcaecati?
-                  Iste iusto excepturi dolorum. Nulla neque nobis ab, iure
-                  libero harum rem consectetur.
-                </span>
+                <span className="text-14 text-black-500">Comming soon !!!</span>
               </li>
             </ul>
           </div>
@@ -146,8 +111,7 @@ const Index = () => {
     <>
       <Meta
         title="Phuong Tran Portfolio | FrontEnd Engineer | UI/UX Developer"
-        description={`Best English được xây dựng bởi công nghệ trí tuệ nhân tạo AI, giúp người học phát âm như người bản xứ và thuật toán
- "Spaced Repetion - ôn tập ngắt quãng" nhắc người học ôn tập đúng thời điểm vàng, tăng x10 lần khả năng ghi nhớ 10,000 từ vựng dễ dàng và lâu dài hơn.`}
+        description={``}
       />
       <section className="min-w-screen h-screen flex items-center justify-center fade-out">
         <animated.div style={{ scale, opacity }} viewBox="0 0 1278 446">
@@ -174,8 +138,7 @@ const Index = () => {
       meta={
         <Meta
           title="Phuong Tran Portfolio | FrontEnd Engineer | UI/UX Developer"
-          description={`Best English được xây dựng bởi công nghệ trí tuệ nhân tạo AI, giúp người học phát âm như người bản xứ và thuật toán
-        "Spaced Repetion - ôn tập ngắt quãng" nhắc người học ôn tập đúng thời điểm vàng, tăng x10 lần khả năng ghi nhớ 10,000 từ vựng dễ dàng và lâu dài hơn.`}
+          description={``}
         />
       }
       noContainer
@@ -202,7 +165,10 @@ const Index = () => {
             </span>
             .
           </p>
-          <Link className="px-[1.5rem] py-[1rem] border-primary border rounded-4 text-14 text-primary hover:opacity-80 w-fit mt-[1.5rem]" href="https://www.linkedin.com/in/anh-ph%C6%B0%C6%A1ng-tran-28b02b159/">
+          <Link
+            className="px-[1.5rem] py-[1rem] border-primary border rounded-4 text-14 text-primary hover:opacity-80 w-fit mt-[1.5rem]"
+            href="https://www.linkedin.com/in/anh-ph%C6%B0%C6%A1ng-tran-28b02b159/"
+          >
             Check out my resume
           </Link>
           <Parallax translateX={[-20, 10]}>
@@ -224,19 +190,23 @@ const Index = () => {
               <Parallax translateX={[-5, 5]} opacity={[0.5, 1]}>
                 <div className="mt-[2rem] text-14 leading-[1.6rem]">
                   <p>
-                    Hello! My name is Phuong Tran and I enjoy creating things that
-                    live on the internet. My interest in web development started
-                    back in 2014.
-                    I have the experience of working on front-end development.
-                    However, i would like to be not only in Front-end but also in Full stack Development
-                    In addition, i am active and enthusiastic. 
-                    I am willing to learn and do what takes to get a job done well even under pressure.
+                    Hello! My name is Phuong Tran and I enjoy creating things
+                    that live on the internet. My interest in web development
+                    started back in 2014. I have the experience of working on
+                    front-end development. However, i would like to be not only
+                    in Front-end but also in Full stack Development In addition,
+                    i am active and enthusiastic. I am willing to learn and do
+                    what takes to get a job done well even under pressure.
                   </p>
                   <p>
-                    To me a chance to discover valuable knowledge in the real world and hope to have more work experience in the field of love and will create useful contacts.
-                    I really look forward to learning more about more thing and can assure you that my drive, commitment and enthusiasm will be a great value to your team.
+                    To me a chance to discover valuable knowledge in the real
+                    world and hope to have more work experience in the field of
+                    love and will create useful contacts. I really look forward
+                    to learning more about more thing and can assure you that my
+                    drive, commitment and enthusiasm will be a great value to
+                    your team.
                   </p>
-                  
+
                   <p>
                     Here are a few technologies I’ve been working with recently:
                   </p>
@@ -389,7 +359,8 @@ const Index = () => {
                 <span className="text-black-400">Some Things I’ve Built</span>
               </h2>
             </div>
-            <div className="flex gap-[2rem] grow w-full relative mb-[6rem] flex-col md:flex-row">
+            <h2>Comming soon !!!</h2>
+            {/* <div className="flex gap-[2rem] grow w-full relative mb-[6rem] flex-col md:flex-row">
               <div className="flex items-center wrapper-project-block">
                 <div className="wrapper-project-img">
                   <Image src={Project1Img} alt="Project1Img"></Image>
@@ -454,7 +425,7 @@ const Index = () => {
                   ></Image>
                 </div>
               </div>
-            </div>
+            </div> */}
           </section>
         </Parallax>
         <Parallax translateY={[0, 50]}>
