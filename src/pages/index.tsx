@@ -72,12 +72,14 @@ const Index = () => {
               Engineer <span className="text-primary">@ Upstatement</span>
             </h3>
             <p className="text-14 text-black-500 mt-[0.8rem]">
-              May 2018 - Present
+              May 2019 - Present
             </p>
             <ul className="grid gap-[1.8rem]">
               <li>
                 <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                <span className="text-14 text-black-500">Comming soon !!!</span>
+                <span className="text-14 text-black-500">
+                  Middle Front end Developer
+                </span>
               </li>
             </ul>
           </div>
@@ -89,19 +91,68 @@ const Index = () => {
             <h3 className="text-18 text-black-400">
               Engineer <span className="text-primary">@ Upstatement</span>
             </h3>
-            <p className="text-14 text-black-500 mt-[0.8rem]">
-              May 2018 - Present
-            </p>
+            <p className="text-14 text-black-500 mt-[0.8rem]">2018</p>
             <ul className="grid gap-[1.8rem]">
               <li>
                 <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                <span className="text-14 text-black-500">Comming soon !!!</span>
+                <span className="text-14 text-black-500">
+                  Junior front end Developer
+                </span>
               </li>
             </ul>
           </div>
         );
         break;
-
+      case 3:
+        return (
+          <div className="content-section-2" key={contentTabSection2}>
+            <h3 className="text-18 text-black-400">
+              Engineer <span className="text-primary">@ Upstatement</span>
+            </h3>
+            <p className="text-14 text-black-500 mt-[0.8rem]">2018</p>
+            <ul className="grid gap-[1.8rem]">
+              <li>
+                <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
+                <span className="text-14 text-black-500">
+                  Front end Developer, Designer
+                </span>
+              </li>
+            </ul>
+          </div>
+        );
+        break;
+      case 4:
+        return (
+          <div className="content-section-2" key={contentTabSection2}>
+            <h3 className="text-18 text-black-400">
+              Engineer <span className="text-primary">@ Upstatement</span>
+            </h3>
+            <p className="text-14 text-black-500 mt-[0.8rem]">2017</p>
+            <ul className="grid gap-[1.8rem]">
+              <li>
+                <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
+                <span className="text-14 text-black-500">
+                  Intern Front end Developer, Designer
+                </span>
+              </li>
+            </ul>
+          </div>
+        );
+        break;
+      case 5:
+        return (
+          <div className="content-section-2" key={contentTabSection2}>
+            <h3 className="text-18 text-black-400">
+              Computer Science at
+              <span className="text-primary">
+                {" "}
+                Ho Chi Minh City Open University
+              </span>
+            </h3>
+            <p className="text-14 text-black-500 mt-[0.8rem]">2014</p>
+          </div>
+        );
+        break;
       default:
         break;
     }
@@ -147,6 +198,7 @@ const Index = () => {
     >
       <div className="">
         <section className="w-10/12 xl:w-3/5 mx-auto flex justify-center flex-col section-1 relative">
+          <div className="slider-thumb"></div>
           <h4 className=" text-primary mb-[0.4rem]">Hi, my name is</h4>
           <h1 className="text-[2rem] md:text-[3rem] font-bold text-black-400 mb-[0.3rem]">
             Phuong Tran.
@@ -235,13 +287,19 @@ const Index = () => {
                     </li>
                     <li>
                       <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
+                      <span className="hover:text-primary">SvelteJS</span>
+                    </li>
+                    <li>
+                      <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
                       <span className="hover:text-primary">
                         Node.js (NestJS)
                       </span>
                     </li>
                     <li>
                       <i className="fal fa-caret-right text-14 text-primary mr-[0.8rem]"></i>
-                      <span className="hover:text-primary">Dart (Flutter)</span>
+                      <span className="hover:text-primary">
+                        Basic of Dart (Flutter)
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -287,11 +345,12 @@ const Index = () => {
                                 contentTabSection2 == 1 ? "#64ffda" : "#CCD6F6",
                             }}
                           >
-                            Learning
+                            Aegona Co., Ltd
                           </p>
                         </span>
                       ),
                     },
+
                     {
                       children: (
                         <span
@@ -304,10 +363,11 @@ const Index = () => {
                                 contentTabSection2 == 2 ? "#64ffda" : "#CCD6F6",
                             }}
                           >
-                            Top On Seek (TOS) LTD.
+                            Kmin Academy
                           </p>
                         </span>
                       ),
+                      color: "green",
                     },
                     {
                       children: (
@@ -321,20 +381,42 @@ const Index = () => {
                                 contentTabSection2 == 3 ? "#64ffda" : "#CCD6F6",
                             }}
                           >
-                            Kmin Academy
+                            Freelancer
                           </p>
                         </span>
                       ),
-                      color: "green",
                     },
                     {
-                      // dot: <ClockCircleOutlined style={{ fontSize: "16px" }} />,
                       children: (
                         <span
                           className="effect-hover-link hover:opacity-80"
                           onClick={() => onChangeContentSection2(4)}
                         >
-                          <p style={{ color: "#CCD6F6" }}>Aegona Co., Ltd</p>
+                          <p
+                            style={{
+                              color:
+                                contentTabSection2 == 4 ? "#64ffda" : "#CCD6F6",
+                            }}
+                          >
+                            Top On Seek (TOS) LTD.
+                          </p>
+                        </span>
+                      ),
+                    },
+                    {
+                      children: (
+                        <span
+                          className="effect-hover-link hover:opacity-80"
+                          onClick={() => onChangeContentSection2(5)}
+                        >
+                          <p
+                            style={{
+                              color:
+                                contentTabSection2 == 5 ? "#64ffda" : "#CCD6F6",
+                            }}
+                          >
+                            Learning
+                          </p>
                         </span>
                       ),
                     },
@@ -363,19 +445,17 @@ const Index = () => {
             {/* <div className="flex gap-[2rem] grow w-full relative mb-[6rem] flex-col md:flex-row">
               <div className="flex items-center wrapper-project-block">
                 <div className="wrapper-project-img">
-                  <Image src={Project1Img} alt="Project1Img"></Image>
+                  <Image src={Pizza4psImage} alt="Project1Img"></Image>
                 </div>
               </div>
               <div className="text-right w-full md:w-[40%]">
                 <h3 className="text-primary text-14">Featured Project</h3>
                 <h2 className="text-black-400 text-18 mb-[1.5rem]">
-                  Project 1
+                  Pizza 4PS
                 </h2>
                 <div className="description-section-3 text-black-500 text-14  relative right-0 mt-[1.2rem]">
                   <div className="text-black-500 px-[2rem] py-[1rem] w-[100%]">
-                    A minimal, dark blue theme for VS Code, Sublime Text, Atom,
-                    iTerm, and more. Available on Visual Studio Marketplace,
-                    Package Control, Atom Package Manager, and npm.
+                    4ps project
                   </div>
                   <ul className="flex gap-[1rem] justify-end mt-[1rem]">
                     <li className="text-black-500 text-14 hover:text-primary">
@@ -395,7 +475,7 @@ const Index = () => {
               <div className="text-left w-full md:w-[40%]">
                 <h3 className="text-primary text-14">Featured Project</h3>
                 <h2 className="text-black-400 text-18 mb-[1.5rem]">
-                  Project 2
+                Maison21G
                 </h2>
                 <div className="description-section-3 text-black-500 text-14  relative left-0 mt-[1.2rem]">
                   <div className="text-black-500 px-[2rem] py-[1rem] w-[100%]">
