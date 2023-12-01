@@ -438,7 +438,7 @@ const Index = () => {
             <div className="gap-[3rem] mb-[3rem]">
               <h2 className="text-primary title-head">
                 0.3{" "}
-                <span className="text-black-400">Some Things I’ve Built</span>
+                <span className="text-black-400">Some Things I’ve Builted</span>
               </h2>
             </div>
             <h2>Comming soon !!!</h2>
