@@ -204,7 +204,7 @@ const Index = () => {
             Phuong Tran.
           </h1>
           <h4 className="text-[2rem] md:text-[3rem] font-bold text-black-500 mb-[0.4rem]">
-            I build things for the web.
+            I build things for the web. - 
           </h4>
           <p className="text-14 text-black-500 leading-[1.6rem] w-full md:w-2/4 mb-[1.4rem]">
             I’m a software engineer specializing in building (and occasionally
