@@ -143,7 +143,7 @@ const KnightTour = () => {
   return (
     <>
       <h2 className="text-center text-[2.5rem] font-bold my-[1.7rem] mb-[2rem]">
-        Knight Tour
+        Knight Tour (Just for fun)
       </h2>
       <div className="chess-wrapper mx-auto">{chessRender(6)}</div>
       <div className="flex gap-[1rem] justify-center items-center">

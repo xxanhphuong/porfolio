@@ -3,12 +3,13 @@ import React, { ReactNode, useCallback, useEffect, useState } from "react";
 import Logo from "@/public/logo.svg";
 import Link from "next/link";
 import { Button } from "antd";
+import ThemeToggle from "@/components/ThemeToggle";
 // eslint-disable-next-line import/no-named-as-default
 
 // type INavHeaderProps = {};
 
 const NavHeader = () => {
-  const [y, setY] = useState(window.scrollY);
+  const [y, setY] = useState(0);
   const [isSticky, setIsSticky] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
@@ -26,12 +27,14 @@ const NavHeader = () => {
   );
 
   useEffect(() => {
-    setY(window.scrollY);
-    window.addEventListener("scroll", handleNavigation);
+    if (typeof window !== "undefined") {
+      setY(window.scrollY);
+      window.addEventListener("scroll", handleNavigation);
 
-    return () => {
-      window.removeEventListener("scroll", handleNavigation);
-    };
+      return () => {
+        window.removeEventListener("scroll", handleNavigation);
+      };
+    }
   }, [handleNavigation]);
 
   const toggleNavMobile = () => {
@@ -71,7 +74,7 @@ const NavHeader = () => {
             className="block md:hidden absolute right-[1rem] top-[1rem]"
             onClick={toggleNavMobile}
           >
-            <i class="far fa-times-circle text-primary text-[1.5rem]"></i>
+            <i className="far fa-times-circle text-primary text-[1.5rem]"></i>
           </button>
           <li className="inline-block hover:text-primary hover:relative hover:-translate-y-[4px] transition-all p-[1rem]">
             <span
@@ -111,6 +114,9 @@ const NavHeader = () => {
             <button className="px-[1.5rem] py-2 border-primary border rounded-4 text-14 text-primary hover:opacity-80 hover:shadow-2xl">
               Resume
             </button>
+          </li>
+          <li className="inline-block hover:text-primary hover:relative hover:-translate-y-[3px] transition-all p-[1rem]">
+            <ThemeToggle />
           </li>
         </ul>
       </div>

@@ -14,49 +14,52 @@ import store from "@/store";
 
 import dynamic from "next/dynamic";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
   ssr: false,
 });
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <ParallaxProvider>
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: "64FFDA",
-          colorFillSecondary: "0B192F",
-        },
-      }}
-    >
-      <StyleProvider hashPriority="high">
-        <Provider store={store}>
-          <Component {...pageProps} />
-          <AnimatedCursor
-            innerSize={12}
-            outerSize={8}
-            color="214, 38, 179"
-            outerAlpha={0.2}
-            innerScale={0.7}
-            outerScale={5}
-            clickables={[
-              "a",
-              'input[type="text"]',
-              'input[type="email"]',
-              'input[type="number"]',
-              'input[type="submit"]',
-              'input[type="image"]',
-              "label[for]",
-              "select",
-              "textarea",
-              "button",
-              ".link",
-            ]}
-          />
-        </Provider>
-      </StyleProvider>
-    </ConfigProvider>
-  </ParallaxProvider>
+  <ThemeProvider>
+    <ParallaxProvider>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "64FFDA",
+            colorFillSecondary: "0B192F",
+          },
+        }}
+      >
+        <StyleProvider hashPriority="high">
+          <Provider store={store}>
+            <Component {...pageProps} />
+            <AnimatedCursor
+              innerSize={12}
+              outerSize={8}
+              color="214, 38, 179"
+              outerAlpha={0.2}
+              innerScale={0.7}
+              outerScale={5}
+              clickables={[
+                "a",
+                'input[type="text"]',
+                'input[type="email"]',
+                'input[type="number"]',
+                'input[type="submit"]',
+                'input[type="image"]',
+                "label[for]",
+                "select",
+                "textarea",
+                "button",
+                ".link",
+              ]}
+            />
+          </Provider>
+        </StyleProvider>
+      </ConfigProvider>
+    </ParallaxProvider>
+  </ThemeProvider>
 );
 
 export default MyApp;

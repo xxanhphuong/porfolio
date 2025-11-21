@@ -132,7 +132,7 @@
 }
 
 .nav-header {
-  background-color: #0b192f70;
+  background-color: rgba(11, 25, 47, 0.7);
   z-index: 10;
   position: fixed;
   transition: 0.7s;
@@ -154,6 +154,11 @@
   &.unset-sticky-header {
     margin-top: -100%;
     box-shadow: unset;
+  }
+  
+  // Theme support
+  :root[data-theme="light"] & {
+    background-color: rgba(248, 249, 250, 0.9);
   }
   .fixed-nav-mobile {
     @media screen and (max-width: 600px) {
@@ -242,7 +247,7 @@
     position: relative;
     width: 100%;
     padding-bottom: 100%;
-    background: url(../../../public/avatar.jpg) no-repeat;
+    background: url(../../../public/avatar.jpeg) no-repeat;
     transition: all 250ms;
     background-size: contain;
     border-radius: 6px;
@@ -276,7 +281,7 @@
     }
     .avatar {
       animation: bganimation 5s infinite;
-      background: url(../../../public/avatar.jpg) no-repeat;
+      background: url(../../../public/avatar.jpeg) no-repeat;
       background-size: contain;
       transform: translate(4px, 4px);
       filter: grayscale(0%);
@@ -342,10 +347,30 @@
 .description-section-3 {
   > div {
     box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-    background: #112240;
+    background: var(--bg-secondary);
     border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     &:hover {
       box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+    }
+  }
+}
+
+// Theme-aware styles
+:root[data-theme="light"] {
+  .title-head::after {
+    background-color: var(--border-color);
+  }
+  
+  .custom-timeline .ant-timeline-item-tail {
+    border-inline-start-color: var(--border-color) !important;
+  }
+  
+  .nav-header {
+    background-color: rgba(248, 249, 250, 0.9);
+    
+    &.sticky-header {
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
     }
   }
 }

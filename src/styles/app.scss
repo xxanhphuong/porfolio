@@ -23,9 +23,57 @@
   }
 }
 
+// ============ THEME VARIABLES ============
+:root[data-theme="dark"] {
+  --bg-primary: #0b192f;
+  --bg-secondary: #112240;
+  --text-primary: #64ffda;
+  --text-secondary: #ccd6f6;
+  --text-tertiary: #8892b0;
+  --border-color: #233554;
+}
+
+:root[data-theme="light"] {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --text-primary: #0b192f;
+  --text-secondary: #112240;
+  --text-tertiary: #495057;
+  --border-color: #dee2e6;
+}
+
 body {
   font-family: "Space Mono", monospace;
-  background: #0b192f;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Theme-aware text colors
+.text-black-400 {
+  color: var(--text-secondary);
+}
+
+.text-black-500 {
+  color: var(--text-tertiary);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+// Theme-aware backgrounds
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+// Theme-aware borders
+.border-primary {
+  border-color: var(--text-primary);
 }
 
 .thumbnail-container {
