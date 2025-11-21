@@ -60,7 +60,7 @@ const ProjectsSection: React.FC = () => {
                     {project.description}
                   </div>
                   <ul
-                    className={`flex gap-[1rem] mt-[1rem] ${
+                    className={`flex gap-[1rem] mt-[1rem] flex-wrap ${
                       isEven ? "justify-start" : "justify-end"
                     }`}
                   >
